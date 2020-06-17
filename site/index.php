@@ -47,7 +47,7 @@ $rec = mysqli_query ($conn, "SELECT * FROM produtos ORDER BY id DESC LIMIT 5");
                     <div class="user-menu">
                         <ul>
                             
-                            <?php	if($_SESSION == true){ ?>
+                            <?php if($_SESSION == true){ ?>
 								<li>	
 									<form action="../site/php/logout.php" method="post">
 										<?php	echo ' Bem vindo ' . $_SESSION['User']. ' ! '?>
@@ -121,19 +121,18 @@ $rec = mysqli_query ($conn, "SELECT * FROM produtos ORDER BY id DESC LIMIT 5");
 	
 	
     <div class="slider-area">
-	<div style= 'text-align:center'><h1>Destaques</h1></div>
-        <div class="slide">
-			<ul class="" id="bxslider-home4">
-				<?php while($data = mysqli_fetch_array($sql)){ ?>	
-					<div class="block-slider img">
-						<img src= <?php echo'data:image/jpeg;base64,'.base64_encode ($data['IMG'])?>  ;/> 
-					</div>
-				
-				<?php } ?>	
-			
-			</ul>
-		</div>
-    </div> 
+        <div style= 'text-align:center'><h1>Destaques</h1></div>
+            <div class="slide">
+                <ul class="" id="bxslider-home4">
+                    <?php while($data = mysqli_fetch_array($sql)){ ?>	
+                        <div class="block-slider img">
+                            <img src= <?php echo'data:image/jpeg;base64,'.base64_encode ($data['IMG']); ?> /> 
+                        </div>
+                    <?php } ?>	
+                </ul>
+            </div>
+        </div>
+    </div>
    
 	<br><br><br><br><br><br><br><br>
 	
